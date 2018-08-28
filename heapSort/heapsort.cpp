@@ -4,25 +4,25 @@ using namespace std;
 // criando um maxHeap
 void heapify(int arr[], int n, int i)
 {
-    int largest = i;  // inicializando o maior como raiz
+    int maior = i;  // inicializando o maior como raiz
     int l = 2*i + 1;  // esquerdo = 2*i + 1
     int r = 2*i + 2;  // direito = 2*i + 2
 
     // se o filho da esquerda é maior que a raiz (troca)
-    if (l < n && arr[l] > arr[largest])
-        largest = l;
+    if (l < n && arr[l] > arr[maior])
+        maior = l;
 
     // se o filho da direita é maior que a raiz
-    if (r < n && arr[r] > arr[largest])
-        largest = r;
+    if (r < n && arr[r] > arr[maior])
+        maior = r;
 
     // quando o maior não estiver como a raiz
-    if (largest != i)
+    if (maior != i)
     {
-        swap(arr[i], arr[largest]);
+        swap(arr[i], arr[maior]);
 
         // recursão na sub-árvore afetada pela troca
-        heapify(arr, n, largest);
+        heapify(arr, n, maior);
     }
 }
 
