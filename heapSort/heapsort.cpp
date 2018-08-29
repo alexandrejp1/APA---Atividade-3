@@ -28,7 +28,7 @@ void heapify(int arr[], int n, int i)
 
 void heapSort(int arr[], int n)
 {
-    // reorganizando o array na árvore
+    // reorganizando o array na árvore (build maxheap)
     for (int i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);
 
